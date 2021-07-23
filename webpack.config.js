@@ -33,6 +33,10 @@ module.exports = {
           from: path.resolve(__dirname, "public/manifest.json"),
           to: path.resolve(__dirname, "dist"),
         },
+        {
+          from: path.resolve(__dirname, "public/googled241d6503b816fe4.html"),
+          to: path.resolve(__dirname, "dist"),
+        },
       ],
     }),
   ],
