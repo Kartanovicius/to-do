@@ -20,8 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:dev": "cross-env NODE_ENV=development webpack --mode development",
-    "start:prod": "cross-env NODE_ENV=production webpack --mode production",
+    "build:dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build:prod": "cross-env NODE_ENV=production webpack --mode production",
     "start:watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start:dev:server": "cross-env NODE_ENV=development webpack serve --mode development --open"
   },
