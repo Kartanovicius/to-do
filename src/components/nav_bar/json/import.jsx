@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, NavDropdown } from "react-bootstrap";
 
-export default function Import({ setTaskList, error, setErrMessage }) {
+export default function ImportJSON({ setTaskList, setError, setErrMessage }) {
   const inputFile = useRef(null);
 
   const onButtonClick = () => {
@@ -18,24 +18,24 @@ export default function Import({ setTaskList, error, setErrMessage }) {
         }
         else{
           setErrMessage("File is empty");
-          error(true);
+          setError(true);
         }
       } catch (err) {
         setErrMessage("Use JSON file format");
-        error(true);
+        setError(true);
       }
     };
   };
 
   return (
-    <Nav.Item>
+    <Nav.Item NavDropdown>
       <input
         type="file"
         ref={inputFile}
         style={{ display: "none" }}
         onChange={handleChange}
       />
-      <Nav.Link onClick={onButtonClick}>Import JSON</Nav.Link>
+      <NavDropdown.Item onClick={onButtonClick}>Import</NavDropdown.Item>
     </Nav.Item>
   );
 }
