@@ -9,14 +9,15 @@ export default function ExportJSON() {
   };
 
   return (
-    <Nav.Item>
-      <NavDropdown.Item
+    <li className="nav-item">
+      <a
+        class="dropdown-item"
         download="Loon-tasklist.json"
         textContent="Download Loon-tasklist.json"
         href={getTaskListUrl()}
       >
         Export
-      </NavDropdown.Item>
-    </Nav.Item>
+      </a>
+    </li>
   );
 }

@@ -1,6 +1,6 @@
 {
-  "short_name": "Deekar To-Do",
-  "name": "Deekar To-Do",
+  "short_name": "To-Do list",
+  "name": "Local online To-Do list",
   "icons": [
     {
       "src": "favicon.ico",

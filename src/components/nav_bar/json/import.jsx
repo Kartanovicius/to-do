@@ -28,14 +28,14 @@ export default function ImportJSON({ setTaskList, setError, setErrMessage }) {
   };
 
   return (
-    <Nav.Item NavDropdown>
+    <li className="nav-item">
       <input
         type="file"
         ref={inputFile}
         style={{ display: "none" }}
         onChange={handleChange}
       />
-      <NavDropdown.Item onClick={onButtonClick}>Import</NavDropdown.Item>
-    </Nav.Item>
+      <a class="dropdown-item" onClick={onButtonClick}>Import</a>
+    </li>
   );
 }

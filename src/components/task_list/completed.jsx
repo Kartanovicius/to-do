@@ -5,7 +5,7 @@ export default function Completed({ taskList, setTaskList }) {
 
   useEffect(() => {
     const newArrayState = taskList.filter((item) => {
-      return item[1] === true;
+      return item.completed === true;
     });
     setCompletedList(newArrayState);
   }, [taskList]);
@@ -14,8 +14,8 @@ export default function Completed({ taskList, setTaskList }) {
   const handleTaskListUpdate = (event) => {
         let taskListCopy = [...taskList];
         for (let i = 0; i < taskList.length; i++) {
-            if(taskList[i][0] === event.target.value){
-                taskListCopy[i][1] = !taskListCopy[i][1];
+            if(taskList[i].name === event.target.value){
+                taskListCopy[i].completed = !taskListCopy[i].completed;
             }            
         }
     setTaskList(taskListCopy);
@@ -25,16 +25,16 @@ export default function Completed({ taskList, setTaskList }) {
     <div class="col border border-1 rounded">
       <ul class="list-group">
         {completedList.map((item) => (
-          <li class="list-group-item" key={item[0]}>
+          <li class="list-group-item" key={item.name}>
             <label>
               <input
                 type="checkbox"
                 class="mr-2"
-                checked={item[1]}
-                value={item[0]}
+                checked={item.completed}
+                value={item.name}
                 onChange={handleTaskListUpdate}
               />
-              <span> {item[0]}</span>
+              <span> {item.name}</span>
             </label>
           </li>
         ))}

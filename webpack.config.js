@@ -46,15 +46,15 @@ module.exports = {
     },
   },
   resolve: {
-    modules: ['node_modules'],
-    extensions: ['.js', '.jsx']
+    modules: ["node_modules"],
+    extensions: [".js", ".jsx", ".tsx", ".ts"],
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
     port: 4200,
     hot: isDev,
   },
-  devtool: isDev ? 'source-map' : '',
+  devtool: isDev ? "source-map" : "",
   module: {
     rules: [
       {
@@ -78,9 +78,18 @@ module.exports = {
         },
       },
       {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ["ts-loader"],
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        use: ["file-loader"],
+    },
     ],
   },
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
-import Delete from "./delete";
+import Delete from "./delete.tsx";
 import ExportJSON from "./json/export";
 import ImportJSON from "./json/import";
 import Encrypt from "./crypt/encrypt";
@@ -9,9 +9,9 @@ import Decrypt from "./crypt/decrypt";
 export default function NavBar({ setTaskList, setError, setErrMessage }) {
   return (
     <div>
-      <Navbar collapseOnSelect="on" expand="sm" bg="dark" variant="dark">
+      <Navbar class="navbar navbar-dark bg-dark" collapseOnSelect="on" expand="sm" bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand href="/">LocalOnline To-Do</Navbar.Brand>
+        <a class="navbar-brand" href="/">Deekar To-Do</a>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

@@ -23,12 +23,18 @@ export default function Encrypt() {
   const handleShow = () => setShow(true);
 
   const handleEncryptData = () => {
-    let ciphertext = CryptoJS.AES.encrypt(
-      JSON.stringify(localStorage.getItem("taskList")),
-      key
-    ).toString();
-    setData(ciphertext);
-    setDisplay("");
+    if(key !== ''){
+      let ciphertext = CryptoJS.AES.encrypt(
+        JSON.stringify(localStorage.getItem("taskList")),
+        key
+      ).toString();
+      setData(ciphertext);
+      setDisplay("");
+    }
+    else{
+      return 0
+    }
+    
   };
 
   const handleCopyData = () => {
@@ -61,7 +67,7 @@ export default function Encrypt() {
           </InputGroup>
           <div class={`${display}`}>
             <div class="row">
-              <div class="col-xl text-break">{data}</div>
+              <div class="col text-break">{data}</div>
               <div class="col-md-auto align-right">
                 <Button type="button" variant="dark" onClick={handleCopyData}>
                   Copy
